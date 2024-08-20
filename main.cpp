@@ -1,9 +1,8 @@
-// Main.cpp
+// main.cpp
 // A basic Tic Tac Toe Game Written in C++ Language
 // compile this three files at the same time "main.cpp", "TicTacToeClasses.cpp", "TicTacToeFunctions.cpp"
 #include "TicTacToeClasses.cpp"
 #include "TicTacToeFunctions.cpp"
-
 
 int main()
 {
@@ -19,7 +18,7 @@ int main()
     getUserNames(nameX, nameO);
     
     //the game is played for 8 turns maximum
-    while(numTurns < 8)
+    while(numTurns < 16) // Correction to match 4x4 board's max turn count
     {
         //print a board that has the postions numbered
         printTheBoard(gameBoard);
@@ -43,7 +42,7 @@ int main()
         //print a board that has the postions numbered
         printTheBoard(gameBoard);
         writeTheBoard(gameBoard);
-        //ask player x where they want to put an 'o'
+        //ask player o where they want to put an 'o'
         printUserPrompt(nameO, 'o');
         //check that the input is a valid position and that
         //it has not already been taken
@@ -64,7 +63,7 @@ int main()
         numTurns++;
     }
     //if there is no winner at this point, the game is a tie
-    if(numTurns >= 8)
+    if(numTurns >= 16)
         cout<<"Tie game.\n\n";
     return 0;
 }
